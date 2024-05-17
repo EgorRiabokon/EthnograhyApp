@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/mainFragment">
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="ua.edu.ethnographyresearch.view.fragments.MainFragment"
+        android:label="fragment_main"
+        tools:layout="@layout/fragment_main" >
+        <action
+            android:id="@+id/action_mainFragment_to_addRecordFragment"
+            app:destination="@id/addRecordFragment"/>
+    </fragment>
+    <fragment
+        android:id="@+id/addRecordFragment"
+        android:name="ua.edu.ethnographyresearch.view.fragments.AddRecordFragment"
+        android:label="fragment_add_record"
+        tools:layout="@layout/fragment_add_record" >
+        <action
+            android:id="@+id/action_addRecordFragment_to_mainFragment"
+            app:destination="@id/mainFragment" />
+        <argument
+            android:name="ethnograpyRecord"
+            app:argType="ua.edu.ethnographyresearch.repository.entity.EthnographyRecord"
+            app:nullable="true" />
+    </fragment>
+</navigation>
